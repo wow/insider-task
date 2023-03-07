@@ -1,0 +1,52 @@
+# Project Name
+
+Brief description of the project.
+
+## Tech Stack
+
+- Laravel 10
+- PHP 8
+- MySQL
+- Inertia - Vue - Vite
+- Docker with Sail
+
+## How To Run
+
+1. Clone the repository
+'''bash
+git clone git@github.com:wow/insider-task.git
+'''
+
+copy env file
+'''bash
+cp .env.example .env
+'''
+
+2. Start Docker containers:
+
+'''bash
+./vendor/bin/sail up -d
+'''
+
+3. Migrate the database and seed:
+'''bash
+./vendor/bin/sail php artisan migrate:fresh --seed
+'''
+
+4. Install NPM dependencies:
+'''bash
+./vendor/bin/sail npm install
+'''
+
+5. Build the assets:
+'''bash
+./vendor/bin/sail npm run dev
+'''
+
+6. Run tests:
+'''bash
+./vendor/bin/sail php artisan test
+'''
+
+7. Open the application in your browser:
+link: http://localhost

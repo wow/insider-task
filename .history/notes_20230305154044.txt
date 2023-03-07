@@ -1,0 +1,25 @@
+Php 8.2
+Laravel 10.2
+Anertia
+React - Vite
+Mysql
+Tailwind
+
+
+-----
+
+Create Teams Table
+Add Teams
+Create League
+Add Teams to League
+
+Generate Fixtures (Games will be played week by week)
+Play All week or Current - Next week
+
+
+Championship Prediction
+- Update every game played
+
+
+- add playes (Club, position, number)
+- player league records (Appearances, Clean sheets, Goals, Assists)

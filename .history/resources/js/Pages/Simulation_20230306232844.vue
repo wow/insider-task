@@ -1,0 +1,138 @@
+<script setup>
+import Layout from "../Shared/Layout.vue";
+import { Head } from "@inertiajs/vue3";
+import NavLink from "../Shared/NavLink.vue";
+
+let props = defineProps({
+  standingTables: Object,
+});
+</script>
+
+<template>
+  <Layout>
+    <Head title="Teams" />
+    <div class="flex flex-wrap">
+      <div class="w-full lg:w-1/2 p-6">
+        <table class="min-w-full text-center text-sm font-light">
+          <thead
+            class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-4">Team Name</th>
+              <th scope="col" class="px-6 py-4">P</th>
+              <th scope="col" class="px-6 py-4">W</th>
+              <th scope="col" class="px-6 py-4">D</th>
+              <th scope="col" class="px-6 py-4">L</th>
+              <th scope="col" class="px-6 py-4">GF</th>
+              <th scope="col" class="px-6 py-4">GA</th>
+              <th scope="col" class="px-6 py-4">GD</th>
+              <th scope="col" class="px-6 py-4">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="standingTable in standingTables"
+              :key="standingTable.id"
+              class="border-b dark:border-neutral-500"
+            >
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.team.name }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.played }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.won }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.drawn }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.lost }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goals_for }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goals_against }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goal_difference }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.points }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Add Button -->
+        <div class="flex justify-end mt-4">
+          <NavLink
+            href="/simulations/simulate"
+            method="post"
+            as="button"
+            class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+          >
+            Simulate All Weeks
+          </NavLink>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2 p-6">
+        <table class="min-w-full text-center text-sm font-light">
+          <thead
+            class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-4">Team Name</th>
+              <th scope="col" class="px-6 py-4">P</th>
+              <th scope="col" class="px-6 py-4">W</th>
+              <th scope="col" class="px-6 py-4">D</th>
+              <th scope="col" class="px-6 py-4">L</th>
+              <th scope="col" class="px-6 py-4">GF</th>
+              <th scope="col" class="px-6 py-4">GA</th>
+              <th scope="col" class="px-6 py-4">GD</th>
+              <th scope="col" class="px-6 py-4">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="standingTable in standingTables"
+              :key="standingTable.id"
+              class="border-b dark:border-neutral-500"
+            >
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.team.name }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.played }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.won }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.drawn }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.lost }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goals_for }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goals_against }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.goal_difference }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-4">
+                {{ standingTable.points }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </Layout>
+</template>
